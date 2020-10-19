@@ -17,14 +17,13 @@ export default class App extends Component {
     }
     componentDidMount() {
         this.setState({hasLoaded: true});
-
-    }
+    };
     handleChange = (e) => {
         let { value } = e.target;
         this.setState({ inputText: value });
-
     };
     handleClick = async () => {
+        // created a toggle button instead of making two different ones that switch true/false
         await this.setState({ hasLoaded: !this.state.hasLoaded });
         if (this.state.hasLoaded) {
             this.setState({ text: "Welcome!" });
@@ -34,7 +33,6 @@ export default class App extends Component {
     };
     cardContent = () => {
         let { hasLoaded, inputText, placeholder } = this.state;
-
         if (hasLoaded) {
             return (
                 <Fragment>
